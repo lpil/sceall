@@ -1,6 +1,6 @@
 name = "sceall"
 version = "1.0.0"
-description = "Spawn OS processes and stream their stdio on the BEAM!"
+description = "Spawn OS processes and stream their stdio using BEAM ports!"
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "lpil", repo = "sceall" }
 links = [

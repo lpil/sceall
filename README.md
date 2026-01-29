@@ -1,6 +1,6 @@
 # Sceall
 
-Spawn OS processes and stream their stdio on the BEAM!
+Spawn OS processes and stream their stdio using BEAM ports!
 
 [![Package Version](https://img.shields.io/hexpm/v/sceall)](https://hex.pm/packages/sceall)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/sceall/)
