@@ -89,6 +89,9 @@ fn erlang_command_port(port: Port, data: BitArray) -> Result(Nil, SendError)
 @external(erlang, "sceall_ffi", "convert_message")
 fn unsafely_convert_message(data: Dynamic) -> ProgramMessage
 
+@external(erlang, "sceall_ffi", "find_executable")
+fn erlang_find_executable(name: Charlist) -> Result(Charlist, Nil)
+
 /// Spawn an operating system, returning a reference to it that can be used to
 /// receive stdio data as messages.
 ///
@@ -162,4 +165,15 @@ pub fn select(
 ///
 pub fn program_port(handle: ProgramHandle) -> Port {
   handle.port
+}
+
+/// Find the path to a program given it's name.
+///
+/// Returns an error if no such executable could be found in the `PATH`.
+///
+pub fn find_executable(name: String) -> Result(String, Nil) {
+  name
+  |> charlist.from_string
+  |> erlang_find_executable
+  |> result.map(charlist.to_string)
 }

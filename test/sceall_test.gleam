@@ -141,3 +141,11 @@ pub fn exit_test() {
   assert !sceall.exit_program(program)
   assert process.selector_receive(selector, 200) == Error(Nil)
 }
+
+pub fn find_executable_not_found_test() {
+  assert sceall.find_executable("not-a-known-program") == Error(Nil)
+}
+
+pub fn find_executable_cat_test() {
+  assert sceall.find_executable("cat") == Ok("/bin/cat")
+}

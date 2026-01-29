@@ -1,5 +1,8 @@
 -module(sceall_ffi).
--export([open_port/2, close_port/1, command_port/2, convert_message/1]).
+-export([
+    open_port/2, close_port/1, command_port/2, convert_message/1,
+    find_executable/1
+]).
 
 open_port(A, O) ->
     try
@@ -34,4 +37,10 @@ convert_message(Message) ->
     case Message of
         {Port, {data, Data}} -> {data, {program_handle, Port}, Data};
         {Port, {exit_status, Status}} -> {exited, {program_handle, Port}, Status}
+    end.
+
+find_executable(Name) ->
+    case os:find_executable(Name) of
+        false -> {error, nil};
+        Path -> {ok, Path}
     end.
