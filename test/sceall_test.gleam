@@ -122,11 +122,11 @@ pub fn env_test() {
 }
 
 pub fn cwd_test() {
-  let assert Ok(program) = sceall.spawn_program("/bin/pwd", "/bin", [], [])
+  let assert Ok(program) = sceall.spawn_program("/bin/pwd", "/", [], [])
   let selector = test_selector() |> sceall.select(program, function.identity)
 
   assert process.selector_receive(selector, 200)
-    == Ok(sceall.Data(program, <<"/bin\n">>))
+    == Ok(sceall.Data(program, <<"/\n">>))
   assert process.selector_receive(selector, 200)
     == Ok(sceall.Exited(program, 0))
 
