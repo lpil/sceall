@@ -147,5 +147,6 @@ pub fn find_executable_not_found_test() {
 }
 
 pub fn find_executable_cat_test() {
-  assert sceall.find_executable("cat") == Ok("/bin/cat")
+  let found = sceall.find_executable("cat")
+  assert found == Ok("/bin/cat") || found == Ok("/usr/bin/cat")
 }
