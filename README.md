@@ -51,4 +51,5 @@ Documentation can be found at <https://hexdocs.pm/sceall>.
 
 Sceall means shell in Gaeilge.
 
-It has 1 syllable. _sc_ as in the start of "skew", _eall_ as in the end of "pal".
+It has 1 syllable. _sc_ as in the start of "skew", _eall_ as in the end of
+"pal". Kinda like "skull" but with an "a" instead of a "u".
